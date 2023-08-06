@@ -2,7 +2,7 @@ import logging
 
 import requests
 
-logger=logging.getlogger(__name__)
+logger=logging.getLogger(__name__)
 
 OMDB_API_URL="https://www.omdbapi.com"
 
@@ -89,6 +89,7 @@ class OmdbClient:
       logger.info("Fetching page %d", page)
       resp = self.make_request({"s": search, "type": "movie", "page": str(page)})
       resp_body = resp.json()
+      
       if total_results is None:
           total_results = int(resp_body["totalResults"])
 
@@ -99,4 +100,4 @@ class OmdbClient:
       if seen_results >= total_results:
           break
 
-      page += 10
+      page += 1

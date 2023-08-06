@@ -7,7 +7,7 @@ from django.utils.timezone import now
 from movies.models import Genre, SearchTerm, Movie
 from omdb.django_client import get_client_from_settings
 
-logger=logging.getlogger(__name__)
+logger=logging.getLogger(__name__)
 
 def get_or_create_genres(genre_name):
   for genre_name in genre_names:
