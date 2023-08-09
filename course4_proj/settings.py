@@ -69,6 +69,11 @@ class Dev(Configuration):
 
   OMDB_KEY = "ae700129"
 
+
+  EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+  
+  ADMINS=[("Nonso", "nonsomacson@gmail.com")]
+
   TEMPLATES = [
       {
           'BACKEND': 'django.template.backends.django.DjangoTemplates',
